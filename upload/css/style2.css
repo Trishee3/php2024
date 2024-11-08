@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffb6c1;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.wrapper .sidebar {
+    width: 300px;
+    height: 100vh;
+    background: #201f1f;
+    padding: 30px 0;
+    flex-shrink: 0;
+    overflow-x: hidden;
+    transition: width 0.3s, transform 0.3s;
+    position: relative; /* Needed for positioning the menu icon */
+}
+
+.wrapper .sidebar.collapsed {
+    width: 80px; /* Narrow width when collapsed */
+}
+
+.wrapper .sidebar h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: opacity 0.3s; /* Smooth transition for opacity */
+}
+
+.wrapper .sidebar.collapsed h2 {
+    opacity: 0; /* Hide heading when collapsed */
+}
+
+.wrapper .sidebar ul {
+    padding-left: 0;
+}
+
+.wrapper .sidebar ul li {
+    padding: 15px 25px;
+    font-size: 18px;
+    transition: opacity 0.3s; /* Smooth transition for text */
+}
+
+.wrapper .sidebar ul li span {
+    margin-left: 15px; /* Adjust margin for the text */
+}
+
+.wrapper .sidebar.collapsed ul li span {
+    display: none; /* Hide text when collapsed */
+}
+
+.wrapper .sidebar ul li a {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.wrapper .sidebar ul li a {
+    position: relative; /* Relative positioning for the pseudo-element */
+    overflow: hidden; /* Hide overflow for the pulse effect */
+}
+
+.wrapper .sidebar ul li a::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Larger than the element to create a pulse effect */
+    height: 200%;
+    background: rgba(177, 173, 173, 0.829); /* Light pulse color */
+    border-radius: 50%; /* Make it a circle */
+    transform: translate(-50%, -50%) scale(0); /* Start hidden */
+    transition: transform 0.5s ease-out; /* Smooth transition */
+}
+
+.wrapper .sidebar ul li a:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+
+.logo {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+}
+
+.wrapper .sidebar.collapsed .logo {
+    opacity: 1; /* Keep logo visible when collapsed */
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 10px; /* Positioned inside the sidebar on the right */
+    background: #ede9e4;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: right 0.3s;
+    z-index: 1000;
+}
+
+.sidebar-header .menu-icon i {
+    color: white;
+    font-size: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+table thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+table tbody tr {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr td {
+    padding: 10px;
+    font-size: small;
+}
+
+table tbody tr td button {
+    background-color: #f90;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+/* Responsive design for the sidebar */
+@media (max-width: 768px) {
+    .wrapper .sidebar {
+        width: 100px;
+        overflow: hidden;
+    }
+
+    .wrapper .sidebar.collapsed {
+        width: 60px;
+    }
+
+    .wrapper .sidebar ul li {
+        font-size: 16px;
+    }
+
+    .wrapper .sidebar ul li span {
+        display: none; /* Hide text when collapsed */
+    }
+
+    .wrapper .sidebar ul li a {
+        font-size: 14px;
+    }
+
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .wrapper .sidebar ul {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,121 @@
+header nav ul li a {
+    display: block;
+    margin: 0 10px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+header nav ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    width: 0;
+    height: 2.5px;
+    transition: all 0.3s ease;
+}
+header nav ul li a:hover::before{
+    width:  100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    header {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 100px;
+}
+header .logo {
+    font-size: 1.5em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+   
+}
+
+header nav ul li {
+    margin-right: 40px;
+    align-items: center;
+}
+
+/* Body and Font */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: lightpink;
+}
+form {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFE5B4; /* Lighter melon color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+input[type="text"]:focus, 
+input[type="file"]:focus {
+    border-color: #666;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 255, 0.2);
+}
+
+b {
+    color: #097053; /* Adjusting the GCash number color for visibility */
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-links {
+    margin-bottom: 10px;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}

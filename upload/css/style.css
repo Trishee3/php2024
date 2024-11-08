@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+/* Body and Font */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: pink;
+}
+header .logo {
+    font-size: 1.5em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+   
+}
+
+header nav ul li {
+    margin-right: 40px;
+    align-items: center;
+}
+
+#f_sec {
+    color: #fff;
+    height: 200px;
+    width: auto;
+    background: linear-gradient(90deg, white, white,pink,pink, grey,black);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns items to the left */
+    padding: 20px;
+}
+.f_sec_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensures the text takes up the remaining space */
+    text-align: center;
+    color: black;
+    font-family: arial;
+    transform: translateX(-80px); /* Adjust this value as needed */
+}
+.sec_img {
+    height: 100%;
+    width: auto; /* Maintain the aspect ratio */
+    object-fit: contain;
+    margin-right: 20px; /* Add some space between the image and text */
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-links {
+    margin-bottom: 10px;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: row; /* Keep the header items in a row */
+        flex-wrap: wrap; /* Allow wrapping to fit in small screens */
+        justify-content: center; /* Center all items in the row */
+    }
+
+    header .logo {
+        flex-basis: 100%; /* Take full width */
+        text-align: center; /* Center the logo */
+    }
+
+    header nav ul {
+        flex-direction: row; /* Keep nav items in a row */
+        justify-content: center; /* Center the navigation menu */
+        width: 100%; /* Full width */
+        
+    }
+
+    header nav ul li {
+        margin: 10px; /* Add margin around items */
+        flex-basis: auto; /* Allow flexibility in width */
+        font-size: 5px; /* Adjust font size for mobile phones */
+    }
+    
+
+    #f_sec {
+        background-color: white !important; /* Force the background to be white on mobile */
+        background: white !important; /* Ensure gradient is overridden */
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+        justify-content: center; /* Center the image */
+        padding: 10px; /* Reduce padding for mobile */
+        height: auto; /* Allow height to adjust based on content */
+        max-height: 100px; /* Set a maximum height to limit space taken */
+        overflow: hidden; /* Hide content that exceeds the max height */
+    }
+    
+
+    .sec_img {
+        max-width: 100%; /* Ensure the image does not exceed the container's width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .f_sec_content {
+        display: none; /* Hide the text content */
+    }
+    header nav ul li a {
+        font-size: 5px; /* Adjust font size for mobile phones */
+    }
+
+}
